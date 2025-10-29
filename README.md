@@ -1,7 +1,7 @@
-# Mir-Coder
+#  Loop Lord
 Mir Coder Portfolio.Here is the detail of mircoder portfolio webiste.Bluding this webiste i use html,css and js.
 # Profile link
-https://mirkashi.github.io/Mir-Coder/
+https://mirkashi.github.io/Looplord/
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -14,7 +14,7 @@ https://mirkashi.github.io/Mir-Coder/
 
 ---
 
-# Mir's Coding Portfolio
+# Loop lord Portfolio
 
 Welcome to my coding portfolio! Here you'll find a showcase of some of my projects and contributions as a web developer. 
 
