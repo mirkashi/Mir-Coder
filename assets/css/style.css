@@ -66,7 +66,7 @@
   --border-secondary: hsla(0, 0%, 90%, 1);
 
   /* gradient colors */
-  --gradient-1: linear-gradient(to top, hsla(0, 0%, 100%, 1) 0%, transparent 40%);
+  --gradient-1: linear-gradient(to top, var(--bg-primary) 0%, transparent 40%);
   --gradient-2: radial-gradient(circle at 75% 100%, hsla(79, 100%, 70%, 0.2) 0%, transparent 100%);
 }
 
