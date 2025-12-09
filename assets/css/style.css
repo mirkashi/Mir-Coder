@@ -88,7 +88,7 @@
   --border-secondary: hsla(0, 0%, 6%, 1);
 
   /* gradient colors */
-  --gradient-1: linear-gradient(to top, var(--bg-black) 0%, transparent 40%);
+  --gradient-1: linear-gradient(to top, var(--bg-primary) 0%, transparent 40%);
   --gradient-2: radial-gradient(circle at 75% 100%, hsla(79, 100%, 70%, 0.3) 0%, transparent 100%);
 
   /**
@@ -245,7 +245,7 @@ body.nav-active { overflow: hidden; }
 }
 
 .btn\:hover::after {
-  border: 1px solid var(--bg-white);
+  border: 1px solid var(--text-primary);
   transform: scale(1.2);
   opacity: 0;
 }
@@ -495,7 +495,7 @@ body.nav-active { overflow: hidden; }
 
 .nav-open-btn:is(:hover, :focus-visible) .line-1 { transform: scaleX(0.7); }
 
-.nav-open-btn::before { background-color: var(--bg-white); }
+.nav-open-btn::before { background-color: var(--text-primary); }
 
 .nav-open-btn::after { background-color: var(--text-primary); }
 
@@ -877,7 +877,7 @@ body.nav-active { overflow: hidden; }
 
 .project-card .card-title {
   display: inline;
-  background-image: linear-gradient(var(--bg-white), var(--bg-white));
+  background-image: linear-gradient(var(--text-primary), var(--text-primary));
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: 0 1px;
