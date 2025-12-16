@@ -1087,6 +1087,25 @@ body.nav-active { overflow: hidden; }
   .tech-name {
     font-size: var(--fontSize-9);
   }
+  
+  .tech-stack .section-title {
+    font-size: var(--fontSize-3);
+  }
+  
+  .tech-stack .section-subtitle {
+    font-size: var(--fontSize-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .tech-item {
+    padding: 20px 15px;
+  }
 }
 
 
@@ -1151,6 +1170,33 @@ body.nav-active { overflow: hidden; }
 @keyframes typing-cursor {
   from, to { border-color: transparent; }
   50% { border-color: var(--text-secondary); }
+}
+
+/* Responsive hero text */
+@media (max-width: 768px) {
+  .gradient-text {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+  
+  .typing-text {
+    font-size: 1.2rem;
+    border-right-width: 2px;
+  }
+  
+  .hero-title-animated {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gradient-text {
+    font-size: 2rem;
+  }
+  
+  .typing-text {
+    font-size: 1rem;
+  }
 }
 
 /* Enhanced button animations */
