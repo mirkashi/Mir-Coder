@@ -180,3 +180,179 @@ themeToggleBtn.addEventListener("click", function () {
   htmlElement.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
 });
+
+
+
+/**
+ * Intersection Observer for scroll animations
+ */
+
+const animateOnScroll = function() {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animation = 'fade-in-up 0.8s ease-out forwards';
+        entry.target.style.opacity = '1';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe sections
+  const sections = document.querySelectorAll('.section');
+  sections.forEach(section => {
+    section.style.opacity = '0';
+    observer.observe(section);
+  });
+
+  // Observe tech items
+  const techItems = document.querySelectorAll('.tech-item');
+  techItems.forEach((item, index) => {
+    item.style.opacity = '0';
+    item.style.animationDelay = `${index * 0.1}s`;
+    observer.observe(item);
+  });
+
+  // Observe service cards
+  const serviceCards = document.querySelectorAll('.service-card');
+  serviceCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.animationDelay = `${index * 0.15}s`;
+    observer.observe(card);
+  });
+
+  // Observe project cards
+  const projectCards = document.querySelectorAll('.project-card');
+  projectCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.animationDelay = `${index * 0.2}s`;
+    observer.observe(card);
+  });
+};
+
+// Initialize scroll animations
+window.addEventListener('load', animateOnScroll);
+
+
+
+/**
+ * Enhanced smooth scroll
+ */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href !== '#') {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});
+
+
+
+/**
+ * Tech stack interactive animations
+ */
+
+const techItems = document.querySelectorAll('.tech-item');
+
+techItems.forEach(item => {
+  item.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-10px) scale(1.05) rotateZ(2deg)';
+  });
+
+  item.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1) rotateZ(0deg)';
+  });
+});
+
+
+
+/**
+ * Parallax effect for space background
+ */
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const stars = document.querySelector('.stars');
+  const stars2 = document.querySelector('.stars2');
+  const stars3 = document.querySelector('.stars3');
+  
+  if (stars && stars2 && stars3) {
+    stars.style.transform = `translateY(${scrollTop * 0.5}px)`;
+    stars2.style.transform = `translateY(${scrollTop * 0.3}px)`;
+    stars3.style.transform = `translateY(${scrollTop * 0.2}px)`;
+  }
+  
+  lastScrollTop = scrollTop;
+});
+
+
+
+/**
+ * Add ripple effect to buttons
+ */
+
+const buttons = document.querySelectorAll('.btn');
+
+buttons.forEach(button => {
+  button.addEventListener('click', function(e) {
+    const ripple = document.createElement('span');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+    
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+    
+    this.appendChild(ripple);
+    
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  });
+});
+
+
+
+/**
+ * Typing animation for hero subtitle
+ */
+
+const typingText = document.querySelector('.typing-text');
+if (typingText) {
+  const text = typingText.textContent;
+  typingText.textContent = '';
+  let charIndex = 0;
+  
+  function typeCharacter() {
+    if (charIndex < text.length) {
+      typingText.textContent += text.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeCharacter, 100);
+    } else {
+      setTimeout(() => {
+        typingText.style.borderRight = 'none';
+      }, 500);
+    }
+  }
+  
+  setTimeout(typeCharacter, 1000);
+}
