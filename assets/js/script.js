@@ -210,7 +210,7 @@ const animateOnScroll = function() {
     observer.observe(section);
   });
 
-  // Observe tech items
+  // Observe tech items (reuse for animations)
   const techItems = document.querySelectorAll('.tech-item');
   techItems.forEach((item, index) => {
     item.style.opacity = '0';
@@ -263,28 +263,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 
 /**
- * Tech stack interactive animations
- */
-
-const techItems = document.querySelectorAll('.tech-item');
-
-techItems.forEach(item => {
-  item.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-10px) scale(1.05) rotateZ(2deg)';
-  });
-
-  item.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0) scale(1) rotateZ(0deg)';
-  });
-});
-
-
-
-/**
  * Parallax effect for space background
  */
-
-let lastScrollTop = 0;
 
 window.addEventListener('scroll', function() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -297,8 +277,6 @@ window.addEventListener('scroll', function() {
     stars2.style.transform = `translateY(${scrollTop * 0.3}px)`;
     stars3.style.transform = `translateY(${scrollTop * 0.2}px)`;
   }
-  
-  lastScrollTop = scrollTop;
 });
 
 

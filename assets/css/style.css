@@ -939,6 +939,7 @@ body.nav-active { overflow: hidden; }
   background-size: 200px 200px;
   opacity: 0.4;
   animation: space-stars 200s linear infinite;
+  will-change: transform;
 }
 
 .stars2 {
@@ -946,6 +947,7 @@ body.nav-active { overflow: hidden; }
   background-size: 400px 400px;
   opacity: 0.3;
   animation: space-stars 400s linear infinite;
+  will-change: transform;
 }
 
 .stars3 {
@@ -953,6 +955,7 @@ body.nav-active { overflow: hidden; }
   background-size: 600px 600px;
   opacity: 0.2;
   animation: space-stars 600s linear infinite;
+  will-change: transform;
 }
 
 @keyframes space-stars {
@@ -1059,7 +1062,7 @@ body.nav-active { overflow: hidden; }
   font-weight: var(--weight-semiBold);
   color: var(--text-primary);
   text-align: center;
-  font-family: var(--fontFamily-roboto);
+  font-family: var(--fontFamily-mono);
 }
 
 @keyframes float {
@@ -1302,12 +1305,6 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: var(--fontFamily-roboto);
-}
-
-/* Code-like elements */
-.tech-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
 }
 
 /* Ripple effect */
